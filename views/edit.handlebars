@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{username}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Edit Your Post:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="project-name">Post Title:</label>
+        <input class="form-input" type="text" id="post_name" name="post-name" /> value={{name}} />
+      </div>
+      <div class="form-group">
+        <label for="project-funding">Post:</label>
+        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      </div>
+      <div class="form-group">
+        <label for="project-desc">Post:</label>
+        <textarea class="form-input" id="post_content" name="post-content">{{post_content}}</textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Say It!</button>
+      </div>
+  <div class="form-group">
+    <h3>Current Posts:</h3>
+
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+ 
+</div>
+
+<script src="./js/edit.js"></script>
+
+
+//need to finish
