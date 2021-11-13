@@ -1,18 +1,18 @@
 [
     {
-        "name": " "
-        "post_content": " "
+        "name": "What does JSON stand for?"
+        "post_content": "Java Script Object Notation "
     },
     {
-        "name": " "
-        "post_content": " "
+        "name": "Where is a good place to find front-end frameworks?"
+        "post_content": "Materialize"
     },
     {
-        "name": " "
-        "post_content": " "
+        "name": "What is Handlebars? "
+        "post_content": "Handlebars is a template engine used in JS"
     },
     {
-        "name": " "
-        "post_content": " "
+        "name": "Is JS good to learn as a web developer?"
+        "post_content": "Absolutely!"
     }
 ]
