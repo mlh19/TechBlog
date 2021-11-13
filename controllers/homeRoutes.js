@@ -5,14 +5,13 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: User,
+      include:User,
     });
-
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts)
-    res.render('homepage', {
-      posts: posts,
-      logged_in: req.session.logged_in
+    res.render('homepage', { 
+      posts: posts, 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -22,16 +21,15 @@ router.get('/', async (req, res) => {
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-
       include: [
         User,
-        {
+        {         
           model: Comment,
           include: [User],
         },
       ]
     });
-
+    
     const post = postData.get({ plain: true });
     console.log(post)
     res.render('post', {
@@ -46,7 +44,6 @@ router.get('/post/:id', async (req, res) => {
 router.get('/edit/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-
       include: [
         User,
         {
@@ -55,7 +52,7 @@ router.get('/edit/:id', async (req, res) => {
         },
       ]
     });
-
+    
     const post = postData.get({ plain: true });
     console.log(post)
     res.render('edit', {
@@ -71,12 +68,13 @@ router.get('/posts', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
     });
+    const identity = req.session.user_id
     console.log(identity)
     const user = userData.get({ plain: true });
     console.log(user)
     const postData = await Post.findAll({
       where: {
-        user_id: req.session.user_id
+        user_id: identity
       }
     });
 
@@ -93,7 +91,6 @@ router.get('/posts', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
@@ -106,12 +103,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
     });
+    const identity = req.session.user_id
     console.log(identity)
     const user = userData.get({ plain: true });
     console.log(user)
     const postData = await Post.findAll({
       where: {
-        user_id: req.session.user_id
+        user_id: identity
       }
     });
 
@@ -132,7 +130,6 @@ router.get('/signup', (req, res) => {
     res.redirect('/dashboard');
     return;
   }
-
   res.render('signup');
 });
 
