@@ -1,32 +1,33 @@
-<div class= "text-center"
-<h2>{{name}}</h2>
+<div class="text-center">
+  <h2>{{name}}</h2>
 
-<p>{{post_content}}</p>
-<p id="post_id">{{id}}</p>
-<p>Created By {{user.username}} on {{format_date date_created}}</p>
-<h3>Comments</h3>
-{{#each comment as |comment|}}
-<div class="card" id="maybeComments">
-    <h5>{{comment.comment_text}}</h5>
-    <div id="userCards">
-    <ul>
-        <li>{{format_date comment.date_created}}</li>
-        <li>Posted By {{comment.user.username}}</li>
-    </ul>
- </div>
-</div>
+  <p>{{post_content}}</p>
+  <p id="post_id">{{id}}</p>
+  <p>Created By {{user.username}} on {{format_date date_created}}</p>
+  <h3>Comments</h3>
+  {{#each comments as |comment|}}
 
-{{/each}}
+    <div class="card" id="maybeComments">
+      <h5>{{comment.comment_text}}</h5>
+      <div id="userCards">
+        <ul>
+          <li>{{format_date comment.date_created}}</li>
+          <li>Posted By {{comment.user.username}}</li>
+        </ul>
+      </div>
+    </div>
+
+  {{/each}}
 </div>
 <h3>Would You Like to Add a Comment?</h3>
 <form class="form comment-form">
-    <div class="form-group">
-        <label for="comment">Comment:</label>
-        <input class="form-input" type="text" id="comment"/>
-    </div>
-    <div class="form-group"> 
-        <button class="btn btn-primary" type="submit" id="submit-btn">Leave a Comment</button>
-    </div>
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <input class="form-input" type="text" id="comment" />
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit" id="submit-btn">Leave a Comment</button>
+  </div>
 </form>
 
 <script src="/js/comment.js"></script>

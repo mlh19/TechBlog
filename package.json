@@ -4,7 +4,8 @@
   "description": "Homework 14",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node seeds/seed.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,9 @@
     "express-session": "^1.17.2",
     "i": "^0.3.7",
     "mysql2": "^2.3.3-rc.0",
+    "nodemon": "^2.0.15",
     "npm": "^8.1.3",
+    "seed": "^0.4.4",
     "sequelize": "^6.9.0"
   }
 }
