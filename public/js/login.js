@@ -14,7 +14,7 @@ const password = document.querySelector('#password-login').value.trim();
 
         if (response.ok) {
             
-            document.location.replace('/profile');
+            document.location.replace('/posts');
         } else {
             alert(response.statusText);
         }
@@ -36,7 +36,7 @@ const password = document.querySelector('#password-signup').value.trim();
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }

@@ -28,6 +28,7 @@ router.post('/edit/:id', async (req, res) => {
             { where: { id: req.body.id } }
         );
 
+        // HTTP error codes. 200 is always success.
         res.status(200).json(updatePost);
     } catch (err) {
         res.status(400).json(err);
