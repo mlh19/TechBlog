@@ -11,12 +11,23 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
 # Screenshot | Video
 
+![Alt Text](https://media.giphy.com/media/6c6bWhJvajyf1n5Zmq/giphy.gif)
+
+![Screenshot](./public/images/homepage.png)
+
+![Screenshot](./public/images/comment.png)
+
+![Screenshot](./public/images/dashboard.png)
+
 # Deployed Site
+
+[Heroku Link](https://say-it-loud-blog.herokuapp.com/)
 
 # Other Details
 
 - Used classroom resources and activities to complete this assignment
-- Worked with Todd, Brooke, and Sam 
+
+- Worked with Todd Taylor, Brooke Jones, and Sam Kilpatrick
 
 
 
