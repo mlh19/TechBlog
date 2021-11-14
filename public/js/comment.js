@@ -3,7 +3,7 @@ const newCommentHandler = async (event) => {
 
 
 const comment_text = document.querySelector('#comment').value.trim();
-const post_id = document.getElementById('postid').innerHTML;
+const post_id = document.getElementById('post_id').innerHTML;
 
 
     if (comment_text) {
